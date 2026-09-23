@@ -11,9 +11,7 @@ void main() {
         IO.println("6. Avsluta");
         String svar = IO.readln("Ange ditt val");
         int val = Integer.parseInt(svar);
-        if (val == 1)
-            ;
-        {
+        if (val == 1) {
             int plats = -1;
             // hitta ledig plats
             for (int i = 0; i < passagerare.length; i++) {
@@ -57,7 +55,41 @@ void main() {
         }
         if (val == 4) {
             String svardate = IO.readln("Ange födelsedatum (YYYYMMDD)");
-
+            int date = Integer.parseInt(svardate);
+            boolean hitta = false;
+            for (int i = 0; i < passagerare.length; i++) {
+                if (passagerare[i] == date) {
+                    IO.println("personen sitter på " + i + 1);
+                    hitta = true;
+                }
+            }
+            if (hitta == false) {
+                IO.println("bokningen finns inte!");
+            }
+            IO.readln("Tryck enter för att fortsätta:");
+        }
+        if (val == 5) {
+            String svardate = IO.readln("Ange födelsedatum (YYYYMMDD)");
+            int date = Integer.parseInt(svardate);
+            boolean hitta = false;
+            for (int i = 0; i < passagerare.length; i++) {
+                if (passagerare[i] == date) {
+                    IO.println("Bokningen på plats " + (i + 1) + "är bortagen");
+                    passagerare[i] = 0;
+                    hitta = true;
+                    break;
+                }
+            }
+            if (hitta = true)
+            {
+                IO.println("Bokningen finns inte");
+            }
+             IO.readln("Tryck enter för att fortsätta:");
+        }
+        if (val == 6)
+        {
+            fortsatt = false;
+              IO.readln("Tryck enter för att avsluta");
         }
     }
 }
